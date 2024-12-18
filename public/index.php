@@ -20,9 +20,9 @@ $router->map('GET', '/', function() {
 
 
 $router->map('GET', '/user', 'UserController#index', 'index');
+$router->map('GET|', '/user/[i:id]', 'userController#show', 'user-show');
 
 // dynamic named route
-$router->map('GET|', '/user/[i:id]', 'userController#show', 'user-detail');
 
 // echo URL to user-details page for ID 5
 // echo $router->generate('user-details', ['id' => 5]); // Output: "/users/5"
@@ -41,4 +41,3 @@ if( is_array($match)) {
 } else {
   header($_SERVER['SERVER_PROTOCOL'] . '404 Not Found');
 }
-
