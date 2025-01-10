@@ -51,4 +51,13 @@ class UserImplement
       );
     }
   }
+
+  public function create(string $name, string $surname, string $email) {
+    $query = "INSERT INTO users (name, surname, email) VALUES (:name, :surname, :email)";
+    $stmt = $this->db->getConnection()->prepare($query);
+    $stmt->bindParam(':name', $name);
+    $stmt->bindParam(':surname', $surname);
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+  }
 }

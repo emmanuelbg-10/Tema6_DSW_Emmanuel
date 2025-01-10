@@ -18,7 +18,13 @@
       <td><?php echo e($user->getId()); ?></td>
       <td><?php echo e($user->getName()); ?></td>
       <td><?php echo e($user->getSurname()); ?></td>
-      <td><a href="/user/<?php echo e($user->getId()); ?>">Editar</a></td>
+      <td>
+        <a href="/user/<?php echo e($user->getId()); ?>">Editar</a>
+        <form action="/user/<?php echo e($user->getId()); ?>" method="post">
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="submit" value="Eliminar">
+        </form>
+      </td>
     </tr>
   </tbody>
   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

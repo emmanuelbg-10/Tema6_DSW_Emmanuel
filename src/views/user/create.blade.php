@@ -3,7 +3,7 @@
 @section('title', "Crear usuario")
 
 @section('content')
-  <form action="">
+  <form action="/user" method="post">
     <p>
       <input type="text" name="name" placeholder="Nombre...">
     </p>
