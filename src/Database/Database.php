@@ -5,21 +5,19 @@ namespace Dsw\Tema6\Database;
 use PDO;
 use PDOException;
 
-class Database
-{
+class Database {
   private $host = 'localhost';
   private $db_name = 'capasdb';
   private $user = 'root';
   private $password = '';
-  private $conn;
+  private $conn; 
 
   public function __construct()
   {
     $this->connect();
   }
 
-  private function connect()
-  {
+  private function connect() {
     $this->conn = null;
 
     try {
@@ -35,13 +33,11 @@ class Database
     $this->disconnect();
   }
 
-  private function disconnect()
-  {
+  private function disconnect() {
     $this->conn = null;
   }
 
-  public function getConnection()
-  {
+  public function getConnection() {
     return $this->conn;
   }
 }

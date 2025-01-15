@@ -14,7 +14,7 @@
       <input type="email" name="email" placeholder="correo electrónico...">
     </p>
     <p>
-      <input type="submit" value="Crear">
+      <input type="submit" value="crear">
     </p>
   </form>
 @endsection
