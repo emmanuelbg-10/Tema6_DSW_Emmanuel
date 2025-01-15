@@ -22,6 +22,7 @@ $router->map('GET', '/', function() use ($blade) {
 });
 
 include('../src/routers/user.php');
+include('../src/routers/group.php');
 
 $match = $router->match();
 if( is_array($match) ) {
