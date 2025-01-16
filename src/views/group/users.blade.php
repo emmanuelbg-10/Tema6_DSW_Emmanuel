@@ -20,9 +20,9 @@
         {{ $checked }}> 
       <label for="user_{{ $user->getId() }}">{{ $user->getName() }}</label>
     </li>
-
     @endforeach
   </ul>
+  <input type="submit" value="Guardar">
       </form>      
 @else
   <h2>Grupo no encontrado</h2>
