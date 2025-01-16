@@ -2,6 +2,8 @@
 
 namespace Dsw\Tema6\Models;
 
+use Dsw\Tema6\Dao\GroupImplement;
+
 class User {
   private int $id;
   private string $name;
@@ -22,4 +24,9 @@ class User {
   public function getSurname() { return $this->surname; }
 
   public function getEmail() { return $this->email; }
+
+  public function groups() {
+    $groupDAO = new GroupImplement();
+    return $groupDAO->findGroupsByUserId($this->id);
+  }
 }

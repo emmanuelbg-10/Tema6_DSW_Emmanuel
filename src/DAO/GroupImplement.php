@@ -68,4 +68,20 @@ class GroupImplement {
     $stmt->bindParam(':name',$name);
     $stmt->execute();
   }
+
+  public function findGroupsByUserId (int $id) {
+    $query = 'SELECT id, name FROM `groups` INNER JOIN group_user ON groups.id = group_user.id_group WHERE group_user.id_user = :id';
+    $stmt = $this->db->getConnection()->prepare($query);
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+    $groups = [];
+    while( $groupRecord = $stmt->fetch(PDO::FETCH_ASSOC)) {
+      $group = new Group(
+        $groupRecord['id'], 
+        $groupRecord['name']
+      );
+      $groups[] = $group;
+    }
+    return $groups;
+  }
 }
