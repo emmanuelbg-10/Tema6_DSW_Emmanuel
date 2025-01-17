@@ -11,6 +11,7 @@
         <th>id</th>
         <th>Nombre</th>
         <th>Apellidos</th>
+        <th>Grupos</th>
         <th>Opciones</th>
       </tr>
     </thead>
@@ -20,6 +21,11 @@
         <td>{{ $user->getId() }}</td>
         <td>{{ $user->getName() }}</td>
         <td>{{ $user->getSurName() }}</td>
+        <th>
+          @foreach($user->groups() as $group)
+            <a href="/group/{{$group->getId()}}">{{ $group->getName() }}</a>
+          @endforeach       
+        </th>
         <td>
           <a href="/user/{{ $user->getId() }}"><button>Mostrar</button></a>
           <a href="/user/{{ $user->getId() }}/edit"><button>Editar</button></a>
