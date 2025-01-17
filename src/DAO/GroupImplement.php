@@ -106,6 +106,4 @@ class GroupImplement {
       $stmt->execute();
     }
   }
-
-
 }
